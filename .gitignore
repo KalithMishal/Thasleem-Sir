@@ -1,0 +1,16 @@
+# Build output / compiled classes
+build/
+WebContent/WEB-INF/classes/
+**/bin/
+*.class
+
+# Eclipse (optional local noise — uncomment if you want)
+# .classpath
+
+# OS
+Thumbs.db
+.DS_Store
+*.swp
+
+# Logs / temp
+*.log

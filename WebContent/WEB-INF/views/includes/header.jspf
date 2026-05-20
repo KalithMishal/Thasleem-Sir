@@ -1,0 +1,23 @@
+<header class="site-header" data-animate>
+  <div class="header-inner">
+    <a class="brand" href="${pageContext.request.contextPath}/home" aria-label="Horizon Atlas home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">Horizon Atlas</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" id="navToggle">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="sr-only">Toggle menu</span>
+    </button>
+    <nav class="site-nav" id="primary-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a class="nav-link ${activeNav == 'home' ? 'is-active' : ''}" href="${pageContext.request.contextPath}/home">Home</a></li>
+        <li><a class="nav-link ${activeNav == 'destinations' ? 'is-active' : ''}" href="${pageContext.request.contextPath}/destinations">Destinations</a></li>
+        <li><a class="nav-link ${activeNav == 'experiences' ? 'is-active' : ''}" href="${pageContext.request.contextPath}/experiences">Experiences</a></li>
+        <li><a class="nav-link ${activeNav == 'about' ? 'is-active' : ''}" href="${pageContext.request.contextPath}/about">About</a></li>
+        <li><a class="nav-link nav-cta ${activeNav == 'contact' ? 'is-active' : ''}" href="${pageContext.request.contextPath}/contact">Plan a trip</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

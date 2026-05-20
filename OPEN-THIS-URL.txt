@@ -1,0 +1,7 @@
+Always start the server first, then open this URL in your browser:
+
+http://127.0.0.1:8888/TravelMVC/home
+
+The black CMD window shows Tomcat logs. After TravelMVC loads you will see lines starting with [TravelMVC] (servlet output). Each time you open Home, another line appears.
+
+(Double-click Run-TravelMVC-CMD.bat or Start-TravelMVC.bat and keep that window open.)

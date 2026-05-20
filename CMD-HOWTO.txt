@@ -1,0 +1,46 @@
+Run TravelMVC from CMD (no Eclipse "Servers")
+============================================================
+
+If you use PowerShell (Cursor / VS Code terminal)
+-------------------------------------------------
+  Do NOT use:  cd /d   (that is CMD only)
+
+  From folder E:\Thasleem sir:
+      cmd /c Run-TravelMVC-CMD.cmd
+
+  Or go into the project first:
+      cd "E:\Thasleem sir\TravelMVC"
+      cmd /c Run-TravelMVC-CMD.bat
+
+  (In PowerShell you can also use:  .\Run-TravelMVC-CMD.bat  but only after cd into TravelMVC.)
+
+You need:
+  1) JDK installed (javac works in CMD)
+  2) Apache Tomcat 9 unzipped NEXT TO this project, for example:
+        E:\Thasleem sir\TravelMVC\
+        E:\Thasleem sir\apache-tomcat-9.0.98\
+
+Steps (Command Prompt, not PowerShell):
+-----------------------------------------
+  cd /d "E:\Thasleem sir\TravelMVC"
+  Run-TravelMVC-CMD.bat
+
+Or double-click:  Run-TravelMVC-CMD.bat
+
+When Tomcat says it has started, open Chrome/Edge and type:
+
+  http://localhost:8888/TravelMVC/home
+
+Stop Tomcat: close the black window, or run from CMD:
+
+  cd /d "E:\Thasleem sir\TravelMVC"
+  ..\apache-tomcat-9.0.98\bin\shutdown.bat
+
+If javac is not recognized:
+  Add JDK to PATH (example):  C:\Program Files\Java\jdk-21\bin
+
+If port 8888 is busy, edit:
+  ..\apache-tomcat-9.0.98\conf\server.xml
+  Change the number in:  <Connector port="8888" ...
+
+This replaces Eclipse "Run on Server" for your assignment demo.

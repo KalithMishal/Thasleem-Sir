@@ -1,0 +1,100 @@
+================================================================================
+  TravelMVC (Horizon Atlas) — HOW TO RUN IT (give this file to a friend)
+================================================================================
+
+WHAT YOU NEED
+-------------
+  1) Windows PC (these steps are for Windows).
+  2) JDK 17 or newer installed.
+       - Open Command Prompt and type:   javac -version
+       - If it says "not recognized", install JDK from Oracle or Adoptium,
+         then add JDK\bin to your system PATH.
+  3) Apache Tomcat 9 (zip).
+       - Download: https://tomcat.apache.org/download-90.cgi  (64-bit Windows zip)
+       - Unzip it anywhere. You should get a folder like:  apache-tomcat-9.0.xx
+
+WHAT TO COPY FROM YOUR FRIEND
+------------------------------
+  Your friend should give you TWO folders sitting NEXT TO EACH OTHER, for example:
+
+      D:\Projects\TravelMVC\              (the project — has src, WebContent, *.bat)
+      D:\Projects\apache-tomcat-9.0.98\ (Tomcat — has bin, conf, webapps, lib)
+
+  Important: the name of the Tomcat folder must be exactly:
+
+      apache-tomcat-9.0.98
+
+  If your Tomcat folder has a different name, rename it to match, OR ask your
+  friend to send the same version / folder name their scripts expect.
+
+  Inside Tomcat, the HTTP port must be 8888 (default in the copy your friend used).
+  If not, open:  apache-tomcat-9.0.98\conf\server.xml
+  Find the line:  <Connector port="8888" protocol="HTTP/1.1"
+  If the number is different, use that number in the browser URL below instead of 8888.
+
+HOW TO RUN (easiest)
+--------------------
+  A) Open Command Prompt (Win+R, type  cmd , Enter).
+
+  B) Go to the project folder, for example:
+
+        cd /d "D:\Projects\TravelMVC"
+
+     (Change D:\Projects\TravelMVC to wherever YOU put the TravelMVC folder.)
+
+  C) Run:
+
+        Run-TravelMVC-CMD.bat
+
+  D) Wait until you see something like:  Server startup in ... milliseconds
+
+  E) Open Chrome / Edge and go to:
+
+        http://127.0.0.1:8888/TravelMVC/home
+
+  F) Leave the black Command Prompt window OPEN while you use the site.
+     Closing it stops the server.
+
+IF YOUR FRIEND USES POWERSHELL (e.g. Cursor / VS Code terminal)
+----------------------------------------------------------------
+  Do not use  cd /d  (that is only for cmd).
+
+  From the folder that CONTAINS both TravelMVC and Tomcat:
+
+        cmd /c Run-TravelMVC-CMD.cmd
+
+  Or:
+
+        cd "D:\Projects\TravelMVC"
+        .\Run-TravelMVC-CMD.bat
+
+HOW TO STOP THE SERVER
+----------------------
+  - Close the Command Prompt window where Tomcat is running, OR
+  - Run:  D:\Projects\apache-tomcat-9.0.98\bin\shutdown.bat
+    (adjust the path to your Tomcat folder)
+
+TROUBLESHOOTING
+---------------
+  "javac not recognized"
+      → Install JDK and add JDK\bin to PATH, then open a NEW Command Prompt.
+
+  "Tomcat not found"
+      → Put apache-tomcat-9.0.98 in the SAME parent folder as TravelMVC
+         (same level as TravelMVC, not inside TravelMVC).
+
+  "This site can't be reached" / connection refused
+      → Server is not running. Run Run-TravelMVC-CMD.bat again and wait for
+         "Server startup". Use port 8888 in the URL unless you changed server.xml.
+
+  Blank page
+      → Use the full URL with /TravelMVC/home  (not only /TravelMVC).
+
+WHAT THIS PROJECT IS
+--------------------
+  A Java Servlet + JSP "MVC" demo website (no database). Good for coursework
+  where you need Tomcat 9 + pages + one form handled by a servlet.
+
+================================================================================
+  Good luck — your friend can copy this whole file as the instructions.
+================================================================================
